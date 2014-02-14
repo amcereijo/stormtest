@@ -4,12 +4,12 @@ import java.util.Map;
 
 import backtype.storm.task.OutputCollector;
 import backtype.storm.task.TopologyContext;
-import backtype.storm.topology.IRichBolt;
 import backtype.storm.topology.OutputFieldsDeclarer;
+import backtype.storm.topology.base.BaseRichBolt;
 import backtype.storm.tuple.Fields;
 import backtype.storm.tuple.Tuple;
 
-public class NumberExampleBolt implements IRichBolt{
+public class NumberExampleBolt extends BaseRichBolt{
 
 	private static final long serialVersionUID = -4086604975824808430L;
 
@@ -62,9 +62,4 @@ public class NumberExampleBolt implements IRichBolt{
 		System.out.println(String.format("Computed Bold - %s", message));
 	}
 
-	@Override
-	public void cleanup() {
-		// TODO Auto-generated method stub
-		
-	}
 }

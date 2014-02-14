@@ -4,12 +4,12 @@ import java.util.Map;
 
 import backtype.storm.spout.SpoutOutputCollector;
 import backtype.storm.task.TopologyContext;
-import backtype.storm.topology.IRichSpout;
 import backtype.storm.topology.OutputFieldsDeclarer;
+import backtype.storm.topology.base.BaseRichSpout;
 import backtype.storm.tuple.Fields;
 import backtype.storm.tuple.Values;
 
-public class NumberExampleSpout implements IRichSpout{
+public class NumberExampleSpout extends BaseRichSpout {
 
 	private static final long serialVersionUID = 226293784682316869L;
 
@@ -44,21 +44,5 @@ public class NumberExampleSpout implements IRichSpout{
 		System.out.println(String.format("Spout - %s", message));
 	}
 
-	@Override
-	public void close() {
-		// TODO Auto-generated method stub
-		
-	}
 
-	@Override
-	public void fail(Object msgId) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public boolean isDistributed() {
-		// TODO Auto-generated method stub
-		return false;
-	}
 }
